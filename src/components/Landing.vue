@@ -2,6 +2,7 @@
 
 <template>
     <div class="container">
+        <img alt="Vue logo" src="../components/imgs/todoplant_logo.png" />
         <h1>¡Bienvenido a tu listado de tareas en formato granero!</h1>
 
         <router-link to="/avatar">
