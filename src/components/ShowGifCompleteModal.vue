@@ -24,6 +24,7 @@ export default {
     },
     methods: {
         close() {
+            location.reload(); 
             this.$emit('update:visible', false);
         },
     }

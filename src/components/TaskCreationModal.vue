@@ -90,6 +90,7 @@ export default {
                 this.$emit('create-task', this.task);
                 this.task = { nombreTarea: '', categoriaTarea: '', fecha: '' }; // Reset task after creation
                 this.close();
+           
             }
         }
     }

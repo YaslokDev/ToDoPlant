@@ -2,7 +2,7 @@
   <div class="container">
     <div class="tareas">
       <div>
-        <h2>To Do list</h2>
+        <h2 style="text-align: left;">To Do list</h2>
       </div>
       <div>
         <Button label="Primary" @click="visible = true">Crear tarea</Button>
@@ -10,12 +10,12 @@
 
       <!-- Lista de Tareas en tarjetas -->
       <div class="tareas-lista">
-        <h3>Tareas Actuales:</h3>
+        <h3 style="margin-left:10px">Tareas Actuales:</h3>
         <ProgressSpinner v-if="this.loading" style="width: 50px; height: 50px" strokeWidth="3" fill="transparent"
           animationDuration=".5s" aria-label="Custom ProgressSpinner" />
 
 
-        <TaskCard v-for="(tarea, index) in tareas" :key="tarea.nombreTarea" :tarea="tarea" @delete="borrarTarea(index)"
+        <TaskCard v-for="(tarea, index) in tareas" :key="tarea.nombreTarea" :tarea="tarea" @delete="borrarTarea(index)" 
           @edit="openEditModal(tarea, index)" @complete="completarTarea(index)" />
 
       </div>
@@ -65,7 +65,9 @@
       <div class="borde-campo"></div>
       <div class="campo">
         <div @click="() => console.log(index)" v-for="(parcela, index) in Array(20)" s :key="index" class="parcela"
-          :style="estiloParcela(index)"></div>
+          :style="estiloParcela(index)"
+          ></div>
+      
 
         <!-- IDEA TOOLTIP -->
         <!-- :data-parcela="index" para acceder a las parcelas. la ruta PointerEvent.target.dataset -->
@@ -258,7 +260,7 @@ export default {
       this.completeVisible = false;
       this.showGifCompleteVisible = true;
       this.deleteIndex = null;
-    },
+    }, 
 
     handleVisibilityChange(newValue) {
       this.confirmVisible = newValue;
@@ -324,6 +326,10 @@ export default {
 </script>
 
 <style>
+
+.header-align{
+  text-align:left;
+}
 .error-message {
   color: red;
   font-weight: bold;
@@ -364,10 +370,8 @@ export default {
 
   overflow-y: auto;
   flex-wrap: wrap;
-  padding: 10px;
+  padding: 35px;
   box-sizing: border-box;
-  /* Ensure padding is included in the height calculation */
-  height: 60%;
 
 }
 
@@ -398,6 +402,7 @@ button {
   margin-top: auto;
   margin-bottom: 30px;
   margin-left: 50px;
+  
 }
 
 
@@ -446,11 +451,16 @@ button {
 .card-body p {
   margin: 5px 0;
 }
+/* .p-card p-component tareas-card{
+  width: 0;
+
+} */
 
 .avatar {
   position: relative;
   height: 5rem;
   width: 4rem;
+  margin-left:40px
 }
 
 

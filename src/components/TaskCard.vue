@@ -1,5 +1,5 @@
 <template>
-  <Card :style="{ width: '25rem', overflow: 'hidden' }">
+  <Card :style="{ width: '90%', overflow: 'hidden', margin: '10px'}">
     <template #title>{{ tarea.text }}</template>
     <template #subtitle><span v-text="tarea.description"></span></template>
     <template #content>
